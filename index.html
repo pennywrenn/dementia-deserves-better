@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dementia Deserves Better — A Civic Advocacy Publication</title>
+  <meta name="description" content="Dementia is a public health crisis treated as a private family tragedy. We are changing that. In honor of Curtis Lee Wrenn Sr.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fdf8f0;
+      --paper-dark: #f5ede0;
+      --paper-warm: #ede0cc;
+      --ink: #1a1209;
+      --ink-mid: #3d2e1a;
+      --ink-light: #6b5a44;
+      --gold: #c8a96e;
+      --gold-dark: #8b6914;
+      --rule: rgba(139,105,20,0.2);
+      --warm-accent: #b5601e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      line-height: 1.7;
+    }
+
+    .masthead {
+      background: var(--paper-warm);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .masthead-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 2rem 2.5rem;
+      border-bottom: 4px double var(--ink);
+      background: var(--paper);
+    }
+
+    .dedication {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold-dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .pub-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .pub-tagline {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.5rem 0;
+      margin: 0 auto;
+      max-width: 560px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .kicker {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ORIGIN */
+    .origin {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .origin h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .origin p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      margin-bottom: 1rem;
+    }
+
+    .origin p.lead {
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 0.8;
+      float: left;
+      margin: 0.1rem 0.15rem 0 0;
+      color: var(--ink);
+    }
+
+    .origin-sidebar {
+      border-left: 1px solid var(--rule);
+      padding-left: 3rem;
+    }
+
+    .memorial-box {
+      background: var(--paper-dark);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--warm-accent);
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .memorial-box .name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .memorial-box .dates {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--ink-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .memorial-box p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--ink-mid);
+      font-style: italic;
+    }
+
+    /* CRISIS */
+    .crisis {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .crisis h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-card {
+      background: var(--paper);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--warm-accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      line-height: 1.5;
+    }
+
+    .crisis p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      max-width: 720px;
+      margin-bottom: 1rem;
+    }
+
+    /* CLW FOUNDATION */
+    .foundation {
+      background: var(--paper-dark);
+      padding: 3.5rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .foundation-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .foundation-brand {
+      text-align: center;
+    }
+
+    .foundation-initials {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+
+    .foundation-name {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    .foundation-content h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .foundation-content p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      margin-bottom: 1rem;
+    }
+
+    /* CIVIC INFRASTRUCTURE */
+    .civic {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .civic h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .civic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .civic-card {
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--gold);
+      padding: 1.75rem;
+      background: var(--paper);
+    }
+
+    .civic-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .civic-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--ink-mid);
+    }
+
+    /* A250 */
+    .a250 {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .a250 .kicker {
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .a250 h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .a250 p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(253,248,240,0.8);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: var(--paper-dark);
+      border-top: 4px double var(--ink);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-pub {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      text-decoration: none;
+    }
+
+    .footer-copy {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-light);
+      line-height: 2;
+    }
+
+    @media (max-width: 768px) {
+      .origin { grid-template-columns: 1fr; gap: 2rem; }
+      .origin-sidebar { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 2rem; }
+      .foundation-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="masthead">
+    <span class="masthead-label">Dementia Advocacy · Healthcare Justice · Civic Infrastructure</span>
+    <span class="masthead-label">pennywrenn.blog</span>
+  </div>
+
+  <header>
+    <p class="dedication">For Curtis Lee Wrenn Sr. — and for every family that deserved better.</p>
+    <h1 class="pub-name">Dementia<br>Deserves<br>Better</h1>
+    <p class="pub-tagline">A civic advocacy publication · Healthcare justice · The CLW Foundation</p>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="origin">
+        <div class="origin-text">
+          <div class="kicker">The Origin Story</div>
+          <h2>This Publication Begins With a Father.<br>It Does Not End There.</h2>
+          <p class="lead drop-cap">Curtis Lee Wrenn Sr. had dementia. He was Penny Wrenn's father. He was brilliant, warm, specific — a person with a full life behind him and a future that deserved dignity. What he received, at the end, was what too many Americans with dementia receive: a system that was not designed for him, a healthcare infrastructure that treated his disease as a private family problem rather than a public health emergency, and a silence around his condition that bordered on shame.</p>
+          <p>This publication refuses that silence. It refuses the privatization of dementia — the quiet understanding that families manage this alone, that the system is doing what it can, that there is nothing structural to be done. There is everything structural to be done.</p>
+          <p>Dementia Deserves Better is a civic advocacy publication. It publishes the policy failures. It names the gaps in care. It connects the personal — the specific, irreplaceable human beings who have dementia — to the systemic, and it refuses to pretend that one does not require the other.</p>
+        </div>
+        <div class="origin-sidebar">
+          <div class="memorial-box">
+            <div class="name">Curtis Lee Wrenn Sr.</div>
+            <div class="dates">Father · The Origin of This Work</div>
+            <p>A man whose dignity demanded better from a system that was not designed to provide it. His life is the reason this publication exists. His story is not a metaphor — it is the foundation.</p>
+          </div>
+          <div class="memorial-box" style="border-left-color:var(--gold);">
+            <div class="name">The CLW Foundation</div>
+            <div class="dates">Curtis Lee Wrenn Foundation · In Formation</div>
+            <p>Named for Curtis Lee Wrenn Sr. The institutional home for dementia advocacy, caregiver support, and civic engagement in elder care policy. The work his daughter is building in his name.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="crisis">
+        <div class="kicker">The Scale of the Failure</div>
+        <h2>This Is Not a Rare Disease Problem.<br>This Is a Civic Infrastructure Crisis.</h2>
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-number">7M+</span>
+            <span class="stat-label">Americans living<br>with dementia today</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">11M</span>
+            <span class="stat-label">Unpaid family<br>caregivers in the U.S.</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">$360B</span>
+            <span class="stat-label">Annual cost of care —<br>mostly borne by families</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">0</span>
+            <span class="stat-label">FDA-approved<br>disease-modifying cures</span>
+          </div>
+        </div>
+        <p>Those numbers describe a public health emergency. They are also numbers that most policy conversations treat as background noise — present, acknowledged, filed away. This publication does not file them away. It asks why the world's wealthiest nation has not solved this, and it names the forces that have prevented solutions.</p>
+        <p>Dementia is not a medical problem awaiting a medical solution. It is also a housing problem. A labor problem. A gender problem — because women provide the vast majority of unpaid care. A racial justice problem. An economic problem. A civic problem. It requires a civic response.</p>
+      </div>
+
+    </div>
+
+    <div class="foundation">
+      <div class="foundation-inner">
+        <div class="foundation-brand">
+          <div class="foundation-initials">CLW</div>
+          <div class="foundation-name">Curtis Lee Wrenn Foundation</div>
+        </div>
+        <div class="foundation-content">
+          <div class="kicker">The CLW Foundation</div>
+          <h2>Building the Institutional Infrastructure<br>That Dementia Care Has Always Lacked</h2>
+          <p>The CLW Foundation — named for Curtis Lee Wrenn Sr. — is the organizational home for this work. It exists because advocacy requires infrastructure, and because the personal grief that drives this publication should not be the only engine. Institutions outlast individuals. The Foundation is how this becomes structural.</p>
+          <p>The CLW Foundation advocates for policy change at the state and federal level. It supports caregivers — particularly unpaid family caregivers who are often doing the work of a healthcare system that has opted out. It publishes research, translates policy, and organizes communities around dementia as a civic issue, not a private one.</p>
+          <p>It is named for one man. It is built for millions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="civic">
+        <div class="kicker">Elder Care as Civic Infrastructure</div>
+        <h2>The Framework: Dementia Policy<br>Is Infrastructure Policy</h2>
+        <div class="civic-grid">
+          <div class="civic-card">
+            <h3>Caregiver Support</h3>
+            <p>The 11 million unpaid caregivers providing dementia care are the invisible backbone of the healthcare system. Their labor deserves recognition, compensation, and relief.</p>
+          </div>
+          <div class="civic-card">
+            <h3>Research Funding</h3>
+            <p>The gap between dementia research funding and the scale of the crisis is a policy failure. Public investment in dementia research is not optional — it is overdue.</p>
+          </div>
+          <div class="civic-card">
+            <h3>Dignity in Care</h3>
+            <p>Every person with dementia is a full human being until the last day of their life. The systems that serve them must be built around that fact, not despite it.</p>
+          </div>
+          <div class="civic-card">
+            <h3>Policy Accountability</h3>
+            <p>Dementia Deserves Better tracks legislation, regulatory decisions, and funding allocations that affect the 7 million Americans with dementia and their families.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="a250">
+      <p class="kicker">America 250 · Elder Care is Civic Infrastructure</p>
+      <h2>A 250-Year-Old Republic<br>That Cannot Protect Its Elders<br>Has Work to Do.</h2>
+      <p>In 2026, America turns 250. The measure of a civilization is how it treats its most vulnerable members. A republic that leaves 7 million people with dementia and 11 million caregivers without adequate support has not yet made good on its founding promises. That is what this publication covers.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-pub">Dementia Deserves Better</div>
+    <div class="footer-links">
+      <a href="https://pennys.dad">pennys.dad</a>
+      <a href="https://pennywrenn.blog">pennywrenn.blog</a>
+      <a href="https://power2026.com">power2026.com</a>
+    </div>
+    <div class="footer-copy">
+      © Penny Wrenn · All Rights Reserved · Free to read · Not free to extract<br>
+      pennywrenn.blog · Part of the America 250 editorial framework
+    </div>
+  </footer>
+
+</body>
+</html>
